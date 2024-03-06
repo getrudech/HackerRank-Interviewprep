@@ -1,0 +1,50 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'plusMinus' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    
+    public static void plusMinus(List<Integer> arr) {
+    // Write your code here
+    double positivecount=0;
+    double negativecount=0;
+    double zerocount=0;
+    double total=arr.size();
+    
+    
+    for(int i=0;i<arr.size();++i){
+        if( arr.get(i)==0){
+            zerocount +=1;
+        }
+        
+        else if( arr.get(i)>0){
+            positivecount +=1;
+        }
+        else{
+            negativecount +=1;
+        }
+        
+    }
+    double positiveRatio= positivecount/total;
+    double negativeRatio=negativecount/total;
+    double zeroRatio=zerocount/total;
+
+    System.out.println((String.format("%.6f",positiveRatio)));
+    System.out.println((String.format("%.6f",negativeRatio)));
+    System.out.println((String.format("%.6f",zeroRatio)));
+    
+
+    }
+
+}
